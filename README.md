@@ -1,1 +1,1 @@
-# test_comp_brms
+# Test new COMPoisson of brms
