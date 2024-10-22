@@ -12,10 +12,8 @@ expose_stan_functions("fun_com_poisson_brms.stan")
 expose_stan_functions("fun_com_poisson_fixed.stan")
 
 # considering the parametrization of https://en.wikipedia.org/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution
-#mu <- c(1, 1.1, 2, 3, 4, 4, 5, 10, 2, 0.5)
-#nu <- c(1.5, 1.4, 1.3, 1.2, 1.1, 2, 1.1, 0.1, 0.5, 2)
-mu <- c(1, 1.1, 2, 3)
-nu <- c(1.5, 1.4, 1.3, 1.2)
+mu <- c(0.5, 1, 1.1, 2, 3)
+nu <- c(2, 1.5, 1.4, 1.3, 1.2)
 lambda <- mu^nu
 
 
