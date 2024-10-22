@@ -4,47 +4,70 @@ library(COMPoissonReg)
 Rcpp::cppFunction('double logDiffExp(double x, double y)
 {return x > y ? 
 Rf_logspace_sub(x, y) :
-Rf_logspace_sub(y, x);}')
+Rf_logspace_sub(y, x);}'
+)
 
 expose_stan_functions("fun_com_poisson_updated.stan")
 expose_stan_functions("fun_com_poisson_brms.stan")
 expose_stan_functions("fun_com_poisson_fixed.stan")
 
 # considering the parametrization of https://en.wikipedia.org/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution
-y <- 0:10
-mu <- 1.1
-nu <- 1.1
+#mu <- c(1, 1.1, 2, 3, 4, 4, 5, 10, 2, 0.5)
+#nu <- c(1.5, 1.4, 1.3, 1.2, 1.1, 2, 1.1, 0.1, 0.5, 2)
+mu <- c(1, 1.1, 2, 3)
+nu <- c(1.5, 1.4, 1.3, 1.2)
 lambda <- mu^nu
 
 
-updated <- numeric(length(y))
-brms <- numeric(length(y))
-fixed <- numeric(length(y))
+updated <- numeric(length(mu))
+brms <- numeric(length(mu))
+fixed <- numeric(length(mu))
+compoissonreg_lib <- numeric(length(mu))
 
-log_Z_updated <- log_Z_com_poisson(log(lambda), nu)
-log_Z_brms <- brms_log_Z_com_poisson(log(lambda), nu)
-log_Z_fixed <- fixed_log_Z_com_poisson(log(lambda), nu)
+updated_error <- numeric(length(mu))
+brms_error <- numeric(length(mu))
+compoissonreg_lib_error <- numeric(length(mu))
 
-for (i in seq_along(y)) {
-  updated[i] <- exp(com_poisson_lpmf(y[i], lambda, nu))
+
+for (i in seq_along(mu)) {
+  fixed[i] <- exp(fixed_log_Z_com_poisson(log(lambda[i]), nu[i]))
 }
 
-for (i in seq_along(y)) {
-  brms[i] <- exp(brms_com_poisson_lpmf(y[i], lambda, nu))
+for (i in seq_along(mu)) {
+  updated[i] <- exp(log_Z_com_poisson(log(lambda[i]), nu[i]))
+  updated_error[i] <- abs(updated[i] - fixed[i])
 }
 
-for (i in seq_along(y)) {
-  fixed[i] <- exp(fixed_com_poisson_lpmf(y[i], lambda, nu))
+for (i in seq_along(mu)) {
+  brms[i] <- exp(brms_log_Z_com_poisson(log(lambda[i]), nu[i]))
+  brms_error[i] <- abs(brms[i] - fixed[i])
+}
+
+for (i in seq_along(mu)) {
+  compoissonreg_lib[i] <- 1/dcmp(0, lambda[i], nu[i])
+  compoissonreg_lib_error[i] <- abs(compoissonreg_lib[i] - fixed[i])
+}
+
+parameters = numeric(length(mu))
+for (i in seq_along(mu)) {
+  parameters[i] <- sprintf("mu=%.2f, nu=%.2f", mu[i], nu[i])
 }
 
 results <- data.frame(
-  y = y,
+  parameters = parameters,
   com_poisson_updated = updated,
   com_poisson_brms = brms,
-  com_poisson_fixed = fixed,
-  COMPoissonReg = dcmp(y, mu, nu)
+  com_poisson_true = fixed,
+  COMPoissonReg = compoissonreg_lib
+)
+
+
+results_error <- data.frame(
+  parameters = parameters,
+  com_poisson_updated = updated_error,
+  com_poisson_brms = brms_error,
+  COMPoissonReg = compoissonreg_lib_error
 )
 
 print(results)
-print(exp(logDiffExp(log_Z_updated, log_Z_fixed)))
-print(exp(logDiffExp(log_Z_brms, log_Z_fixed)))
+print(results_error)
