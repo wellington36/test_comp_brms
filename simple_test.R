@@ -12,6 +12,8 @@ expose_stan_functions("fun_com_poisson_brms.stan")
 expose_stan_functions("fun_com_poisson_fixed.stan")
 
 # considering the parametrization of https://en.wikipedia.org/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution
+#mu <- c(0.1, 0.2, 0.4, 1, 2.5, 5, 10)
+#nu <- c(10, 5, 2.5, 1, 0.4, 0.2, 0.1)
 mu <- c(0.5, 1, 1.1, 2, 3)
 nu <- c(2, 1.5, 1.4, 1.3, 1.2)
 lambda <- mu^nu
@@ -53,17 +55,17 @@ for (i in seq_along(mu)) {
 
 results <- data.frame(
   parameters = parameters,
-  com_poisson_updated = updated,
-  com_poisson_brms = brms,
-  com_poisson_true = fixed,
+  COMP_updated = updated,
+  COMP_brms = brms,
+  COMP_true = fixed,
   COMPoissonReg = compoissonreg_lib
 )
 
 
 results_error <- data.frame(
   parameters = parameters,
-  com_poisson_updated = updated_error,
-  com_poisson_brms = brms_error,
+  COMP_updated = updated_error,
+  COMP_poisson_brms = brms_error,
   COMPoissonReg = compoissonreg_lib_error
 )
 
