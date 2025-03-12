@@ -29,8 +29,8 @@ stan_data <- list(
 fit <- stan(
   file = "com_poisson.stan",
   data = stan_data,
-  iter = 200,
-  cores = 4
+  iter = 500,
+  cores = 1
 )
 
 print(fit)
@@ -58,3 +58,9 @@ plot(fit)
 # 
 # print(fit)
 # plot(fit)
+
+################### COMPoissonReg ##########
+
+# library(COMPoissonReg)
+# 
+# COMPoissonReg::glm.cmp(count ~ 1, data = zinb)
