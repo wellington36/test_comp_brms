@@ -28,7 +28,7 @@ real log_Z_com_poisson(real log_mu, real nu) {
   real log_Z;
   int k = 2;
   int M = 10000;
-  real leps = -52 * log2();
+  real leps = -8 * log2();
   vector[M] log_Z_terms;
 
 
@@ -45,12 +45,13 @@ real log_Z_com_poisson(real log_mu, real nu) {
   log_Z_terms[2] = log_k_term(log_mu, nu, 2);
   
   
-  //while ((log_Z_terms[k] >= log_Z_terms[k-1]) ||
-  //  (bound_remainder(log_Z_terms[k], log_Z_terms[k-1]) >= leps) &&
-  //  k < M) {
-  int i = 0;
-  while (i < 50-2) {
-    i += 1;
+  while ((log_Z_terms[k] >= log_Z_terms[k-1]) ||
+    //(bound_remainder(log_Z_terms[k], log_Z_terms[k-1]) >= leps) &&
+    (log_Z_terms[k] >= leps) &&
+    k < M) {
+  //int i = 0;
+  //while (i < 50-2) {
+    //i += 1;
     k += 1;
     log_Z_terms[k] = log_k_term(log_mu, nu, k);
   }
