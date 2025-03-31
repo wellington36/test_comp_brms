@@ -1,0 +1,57 @@
+> devtools::install_github("wellington36/brms@original")
+Downloading GitHub repo wellington36/brms@original
+── R CMD build ─────────────────────────────────────────────────────────────────────
+✔  checking for file ‘/tmp/Rtmp1dYqHc/remotes17c984f83e987/wellington36-brms-644b3e5/DESCRIPTION’ ...
+─  preparing ‘brms’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘brms_2.22.8.tar.gz’
+   
+Installing package into ‘/home/zeus-iii/R/x86_64-pc-linux-gnu-library/4.4’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘brms’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (brms)
+> library(brms)
+> 
+> zinb <- read.csv("https://paul-buerkner.github.io/data/fish.csv")
+> 
+> fit <- brm(count ~ 1,
++            cores=4,
++            iter=1000,
++            data = zinb,
++            family = "com_poisson",
++            backend = "cmdstanr",
++            control = list(adapt_delta = 0.99))
+Compiling Stan program...
+Start sampling
+Running MCMC with 4 parallel chains...
+
+Warning: Chain 1 finished unexpectedly!
+
+Warning: Chain 2 finished unexpectedly!
+
+Warning: Chain 3 finished unexpectedly!
+
+Warning: Chain 4 finished unexpectedly!
+
+Warning: Use read_cmdstan_csv() to read the results of the failed chains.
+Error: Fitting failed. Unable to retrieve the metadata.
+In addition: Warning messages:
+1: All chains finished unexpectedly! Use the $output(chain_id) method for more information.
+ 
+2: No chains finished successfully. Unable to retrieve the fit.
