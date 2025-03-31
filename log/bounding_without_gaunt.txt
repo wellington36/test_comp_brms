@@ -1,0 +1,125 @@
+> devtools::install_github("wellington36/brms@bounding_without_gaunt")
+Downloading GitHub repo wellington36/brms@bounding_without_gaunt
+── R CMD build ─────────────────────────────────────────────────────────────────────
+✔  checking for file ‘/tmp/Rtmp1dYqHc/remotes17c986a3c1295/wellington36-brms-bde8488/DESCRIPTION’ ...
+─  preparing ‘brms’:
+✔  checking DESCRIPTION meta-information ...
+─  checking for LF line-endings in source and make files and shell scripts
+─  checking for empty or unneeded directories
+─  building ‘brms_2.22.8.tar.gz’
+   
+Installing package into ‘/home/zeus-iii/R/x86_64-pc-linux-gnu-library/4.4’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘brms’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (brms)
+> library(brms)
+> 
+> zinb <- read.csv("https://paul-buerkner.github.io/data/fish.csv")
+> 
+> fit <- brm(count ~ 1,
++            cores=4,
++            iter=1000,
++            data = zinb,
++            family = "com_poisson",
++            backend = "cmdstanr",
++            control = list(adapt_delta = 0.99))
+Compiling Stan program...
+Start sampling
+Running MCMC with 4 parallel chains...
+
+Chain 4 Iteration:   1 / 1000 [  0%]  (Warmup) 
+Chain 1 Iteration:   1 / 1000 [  0%]  (Warmup) 
+Chain 2 Iteration:   1 / 1000 [  0%]  (Warmup) 
+Chain 3 Iteration:   1 / 1000 [  0%]  (Warmup) 
+Chain 4 Iteration: 100 / 1000 [ 10%]  (Warmup) 
+Chain 3 Iteration: 100 / 1000 [ 10%]  (Warmup) 
+Chain 4 Iteration: 200 / 1000 [ 20%]  (Warmup) 
+Chain 3 Iteration: 200 / 1000 [ 20%]  (Warmup) 
+Chain 4 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 3 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 1 Iteration: 100 / 1000 [ 10%]  (Warmup) 
+Chain 4 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 3 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 2 Iteration: 100 / 1000 [ 10%]  (Warmup) 
+Chain 4 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 4 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 200 / 1000 [ 20%]  (Warmup) 
+Chain 3 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 3 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 1 Iteration: 200 / 1000 [ 20%]  (Warmup) 
+Chain 4 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 3 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 2 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 4 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 3 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 1 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 2 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 2 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 800 / 1000 [ 80%]  (Sampling) 
+Chain 4 Iteration: 800 / 1000 [ 80%]  (Sampling) 
+Chain 1 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 1 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 1 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 2 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 4 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 1 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 1 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 3 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 3 finished in 832.6 seconds.
+Chain 4 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 4 finished in 845.0 seconds.
+Chain 1 Iteration: 800 / 1000 [ 80%]  (Sampling) 
+Chain 2 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 1 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 1 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 1 finished in 919.4 seconds.
+Chain 2 Iteration: 800 / 1000 [ 80%]  (Sampling) 
+Chain 2 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 2 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 2 finished in 1104.1 seconds.
+
+All 4 chains finished successfully.
+Mean chain execution time: 925.3 seconds.
+Total execution time: 1105.8 seconds.
+
+Warning: 18 of 2000 (1.0%) transitions ended with a divergence.
+See https://mc-stan.org/misc/warnings for details.
+
+> 
+> summary(fit)
+ Family: com_poisson 
+  Links: mu = log; shape = identity 
+Formula: count ~ 1 
+   Data: zinb (Number of observations: 250) 
+  Draws: 4 chains, each with iter = 1000; warmup = 500; thin = 1;
+         total post-warmup draws = 2000
+
+Regression Coefficients:
+          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+Intercept    -0.27      0.02    -0.30    -0.24 1.01      416      404
+
+Further Distributional Parameters:
+      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+shape     0.00      0.00     0.00     0.00 1.02      239      418
+
+Draws were sampled using sample(hmc). For each parameter, Bulk_ESS
+and Tail_ESS are effective sample size measures, and Rhat is the potential
+scale reduction factor on split chains (at convergence, Rhat = 1).
+Warning message:
+There were 18 divergent transitions after warmup. Increasing adapt_delta above 0.99 may help. See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
