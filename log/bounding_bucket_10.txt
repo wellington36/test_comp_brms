@@ -102,22 +102,7 @@ Warning: 51 of 2000 (3.0%) transitions ended with a divergence.
 See https://mc-stan.org/misc/warnings for details.
 
 > 
-> summary(fit)Running MCMC with 4 parallel chains...
-
-Warning: Chain 1 finished unexpectedly!
-
-Warning: Chain 2 finished unexpectedly!
-
-Warning: Chain 3 finished unexpectedly!
-
-Warning: Chain 4 finished unexpectedly!
-
-Warning: Use read_cmdstan_csv() to read the results of the failed chains.
-Error: Fitting failed. Unable to retrieve the metadata.
-In addition: Warning messages:
-1: All chains finished unexpectedly! Use the $output(chain_id) method for more information.
- 
-2: No chains finished successfully. Unable to retrieve the fit.
+> summary(fit)
  Family: com_poisson 
   Links: mu = log; shape = identity 
 Formula: count ~ 1 
