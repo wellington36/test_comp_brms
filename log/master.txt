@@ -41,64 +41,64 @@ Model executable is up to date!
 Start sampling
 Running MCMC with 4 parallel chains...
 
-Chain 2 Iteration:   1 / 1000 [  0%]  (Warmup) 
 Chain 4 Iteration:   1 / 1000 [  0%]  (Warmup) 
-Chain 3 Iteration:   1 / 1000 [  0%]  (Warmup) 
 Chain 1 Iteration:   1 / 1000 [  0%]  (Warmup) 
-Chain 2 Iteration: 100 / 1000 [ 10%]  (Warmup) 
-Chain 2 Iteration: 200 / 1000 [ 20%]  (Warmup) 
-Chain 4 Iteration: 100 / 1000 [ 10%]  (Warmup) 
-Chain 2 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 3 Iteration:   1 / 1000 [  0%]  (Warmup) 
+Chain 2 Iteration:   1 / 1000 [  0%]  (Warmup) 
 Chain 3 Iteration: 100 / 1000 [ 10%]  (Warmup) 
+Chain 4 Iteration: 100 / 1000 [ 10%]  (Warmup) 
 Chain 3 Iteration: 200 / 1000 [ 20%]  (Warmup) 
-Chain 4 Iteration: 200 / 1000 [ 20%]  (Warmup) 
-Chain 2 Iteration: 400 / 1000 [ 40%]  (Warmup) 
-Chain 3 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 2 Iteration: 100 / 1000 [ 10%]  (Warmup) 
 Chain 1 Iteration: 100 / 1000 [ 10%]  (Warmup) 
-Chain 2 Iteration: 500 / 1000 [ 50%]  (Warmup) 
-Chain 2 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 200 / 1000 [ 20%]  (Warmup) 
+Chain 4 Iteration: 200 / 1000 [ 20%]  (Warmup) 
 Chain 1 Iteration: 200 / 1000 [ 20%]  (Warmup) 
-Chain 3 Iteration: 400 / 1000 [ 40%]  (Warmup) 
-Chain 1 Iteration: 300 / 1000 [ 30%]  (Warmup) 
-Chain 2 Iteration: 600 / 1000 [ 60%]  (Sampling) 
-Chain 3 Iteration: 500 / 1000 [ 50%]  (Warmup) 
-Chain 3 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 2 Iteration: 300 / 1000 [ 30%]  (Warmup) 
 Chain 4 Iteration: 300 / 1000 [ 30%]  (Warmup) 
-Chain 1 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 3 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 2 Iteration: 400 / 1000 [ 40%]  (Warmup) 
 Chain 4 Iteration: 400 / 1000 [ 40%]  (Warmup) 
-Chain 2 Iteration: 700 / 1000 [ 70%]  (Sampling) 
-Chain 3 Iteration: 600 / 1000 [ 60%]  (Sampling) 
-Chain 1 Iteration: 500 / 1000 [ 50%]  (Warmup) 
-Chain 1 Iteration: 501 / 1000 [ 50%]  (Sampling) 
 Chain 4 Iteration: 500 / 1000 [ 50%]  (Warmup) 
 Chain 4 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 3 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 3 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 2 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 2 Iteration: 501 / 1000 [ 50%]  (Sampling) 
 Chain 4 Iteration: 600 / 1000 [ 60%]  (Sampling) 
-Chain 3 Iteration: 700 / 1000 [ 70%]  (Sampling) 
-Chain 2 Iteration: 800 / 1000 [ 80%]  (Sampling) 
-Chain 1 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 3 Iteration: 600 / 1000 [ 60%]  (Sampling) 
+Chain 2 Iteration: 600 / 1000 [ 60%]  (Sampling) 
 Chain 4 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 3 Iteration: 700 / 1000 [ 70%]  (Sampling) 
 Chain 4 Iteration: 800 / 1000 [ 80%]  (Sampling) 
-Chain 1 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 1 Iteration: 300 / 1000 [ 30%]  (Warmup) 
+Chain 2 Iteration: 700 / 1000 [ 70%]  (Sampling) 
 Chain 3 Iteration: 800 / 1000 [ 80%]  (Sampling) 
-Chain 2 Iteration: 900 / 1000 [ 90%]  (Sampling) 
 Chain 4 Iteration: 900 / 1000 [ 90%]  (Sampling) 
-Chain 1 Iteration: 800 / 1000 [ 80%]  (Sampling) 
-Chain 4 Iteration: 1000 / 1000 [100%]  (Sampling) 
-Chain 4 finished in 965.3 seconds.
 Chain 3 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 2 Iteration: 800 / 1000 [ 80%]  (Sampling) 
+Chain 4 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 4 finished in 864.6 seconds.
+Chain 1 Iteration: 400 / 1000 [ 40%]  (Warmup) 
+Chain 3 Iteration: 1000 / 1000 [100%]  (Sampling) 
+Chain 3 finished in 913.5 seconds.
+Chain 2 Iteration: 900 / 1000 [ 90%]  (Sampling) 
+Chain 1 Iteration: 500 / 1000 [ 50%]  (Warmup) 
+Chain 1 Iteration: 501 / 1000 [ 50%]  (Sampling) 
+Chain 1 Iteration: 600 / 1000 [ 60%]  (Sampling) 
 Chain 2 Iteration: 1000 / 1000 [100%]  (Sampling) 
-Chain 2 finished in 1006.8 seconds.
+Chain 2 finished in 983.4 seconds.
+Chain 1 Iteration: 700 / 1000 [ 70%]  (Sampling) 
+Chain 1 Iteration: 800 / 1000 [ 80%]  (Sampling) 
 Chain 1 Iteration: 900 / 1000 [ 90%]  (Sampling) 
 Chain 1 Iteration: 1000 / 1000 [100%]  (Sampling) 
-Chain 1 finished in 1063.6 seconds.
-Chain 3 Iteration: 1000 / 1000 [100%]  (Sampling) 
-Chain 3 finished in 1065.4 seconds.
+Chain 1 finished in 1159.2 seconds.
 
 All 4 chains finished successfully.
-Mean chain execution time: 1025.3 seconds.
-Total execution time: 1067.8 seconds.
+Mean chain execution time: 980.2 seconds.
+Total execution time: 1160.9 seconds.
 
-Warning: 44 of 2000 (2.0%) transitions ended with a divergence.
+Warning: 17 of 2000 (1.0%) transitions ended with a divergence.
 See https://mc-stan.org/misc/warnings for details.
 
 > 
@@ -112,14 +112,14 @@ Formula: count ~ 1
 
 Regression Coefficients:
           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-Intercept    -0.27      0.02    -0.30    -0.23 1.01      449      265
+Intercept    -0.27      0.02    -0.30    -0.23 1.01      445      522
 
 Further Distributional Parameters:
       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-shape     0.00      0.00     0.00     0.00 1.02      209      266
+shape     0.00      0.00     0.00     0.00 1.01      198      394
 
 Draws were sampled using sample(hmc). For each parameter, Bulk_ESS
 and Tail_ESS are effective sample size measures, and Rhat is the potential
 scale reduction factor on split chains (at convergence, Rhat = 1).
 Warning message:
-There were 44 divergent transitions after warmup. Increasing adapt_delta above 0.99 may help. See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
+There were 17 divergent transitions after warmup. Increasing adapt_delta above 0.99 may help. See http://mc-stan.org/misc/warnings.html#divergent-transitions-after-warmup
